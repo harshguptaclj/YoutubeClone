@@ -74,7 +74,7 @@ const Head = () => {
             className="px-5 w-1/2 border border-gray-400 p-2 rounded-l-full"
             type="text"
             value={searchQuery}
-            onChange={}
+            //onChange={}
             // (e) => setSearchQuery(e.target.value)
             // onFocus={() => setShowSuggestions(true)}
             // onBlur={() => setShowSuggestions(false)}
