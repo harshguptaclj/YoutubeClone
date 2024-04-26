@@ -74,9 +74,9 @@ const Head = () => {
             className="px-5 w-1/2 border border-gray-400 p-2 rounded-l-full"
             type="text"
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            onFocus={() => setShowSuggestions(true)}
-            onBlur={() => setShowSuggestions(false)}
+            // onChange={(e) => setSearchQuery(e.target.value)}
+            // onFocus={() => setShowSuggestions(true)}
+            // onBlur={() => setShowSuggestions(false)}
           />
           <button className="border border-gray-400 px-5 py-2 rounded-r-full bg-gray-100">
             🔍
