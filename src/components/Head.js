@@ -6,10 +6,10 @@ import { cacheResults } from "../utils/searchSlice";
 
 const Head = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [suggestions, setSuggestions] = useState([]);
-  const [showSuggestions, setShowSuggestions] = useState(false);
+  //const [suggestions, setSuggestions] = useState([]);
+  //const [showSuggestions, setShowSuggestions] = useState(false);
 
-  const searchCache = useSelector((store) => store.search);
+  //const searchCache = useSelector((store) => store.search);
   const dispatch = useDispatch();
 
   /**
@@ -19,33 +19,33 @@ const Head = () => {
    *  searchQuery = iphone
    */
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (searchCache[searchQuery]) {
-        setSuggestions(searchCache[searchQuery]);
-      } else {
-        getSearchSugsestions();
-      }
-    }, 200);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     if (searchCache[searchQuery]) {
+  //       setSuggestions(searchCache[searchQuery]);
+  //     } else {
+  //       getSearchSugsestions();
+  //     }
+  //   }, 200);
 
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [searchQuery]);
+  //   return () => {
+  //     clearTimeout(timer);
+  //   };
+  // }, [searchQuery]);
 
-  const getSearchSugsestions = async () => {
-    const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
-    const json = await data.json();
-    //console.log(json[1]);
-    setSuggestions(json[1]);
+  // const getSearchSugsestions = async () => {
+  //   const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
+  //   const json = await data.json();
+  //   //console.log(json[1]);
+  //   setSuggestions(json[1]);
 
-    // update cache
-    dispatch(
-      cacheResults({
-        [searchQuery]: json[1],
-      })
-    );
-  };
+  //   // update cache
+  //   dispatch(
+  //     cacheResults({
+  //       [searchQuery]: json[1],
+  //     })
+  //   );
+  // };
 
   const toggleMenuHandler = () => {
     dispatch(toggleMenu());
@@ -74,7 +74,7 @@ const Head = () => {
             className="px-5 w-1/2 border border-gray-400 p-2 rounded-l-full"
             type="text"
             value={searchQuery}
-            // onChange={(e) => setSearchQuery(e.target.value)}
+            onChange={(e) => setSearchQuery(e.target.value)}
             // onFocus={() => setShowSuggestions(true)}
             // onBlur={() => setShowSuggestions(false)}
           />
